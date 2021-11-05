@@ -1,0 +1,102 @@
+is_log_in = False
+quit = False
+
+user = {'name':'','balance':0}
+        
+def create_user():
+    
+    
+    name = input("please enter your name")
+    user['name']= name
+    global is_log_in 
+    is_log_in = True
+        
+        
+        
+        
+def deposit():
+    
+
+    try:
+
+        value = float(input("please enter the amount you want to deposit"))
+        user["balance"] += value
+        print( "\n Amount deposited", (value))
+        print("\n current balance is",({user["balance"]}))
+
+    except:
+        print("please enter a number")
+        
+        
+    
+    
+
+          
+          
+
+
+    
+
+def withdraw():
+
+    try:
+        value = float(input('please enter the value'))
+
+        if value > user["balance"]:
+            print('Insufficient balance')
+
+        elif value == 0:
+            print("please enter value above 0")
+
+        else:
+            user["balance"] -= value
+            print("\n The amount has been sucessfully withdrawn" + str(value))
+            print(f"\n your current balance is {user['balance']}")
+    except:
+        print("please enter a number")
+        
+def check_bal():
+    print(f"your current balance is {user['balance']}")
+            
+
+            
+            
+def start():
+    while quit == False:
+        if is_log_in == False:
+            print("\nCreate your account")
+            
+            create_user()
+        else:
+            print(f"Welcome to the bank user  {user['name']} \nWhat would you like to do")
+            
+            choice = input("enter w for withdraw, enter d for deposit, enter b to check balance, \n enter q to quit ")
+            
+            if choice.lower() == 'w':
+                withdraw()
+                
+            elif choice.lower() == 'd':
+                deposit()
+                
+            elif choice.lower() == 'b':
+                check_bal()
+                
+            elif choice.lower() == 'q':
+                break
+            
+            else:
+                print("enter a correct value please")
+
+start()
+                
+            
+            
+            
+            
+  
+        
+    
+    
+    
+    
+        
