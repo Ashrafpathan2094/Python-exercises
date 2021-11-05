@@ -1,0 +1,61 @@
+def addition(a,b):
+    return a + b
+
+
+
+def subtraction(a,b):
+    return a - b
+
+
+
+def multiplication(a,b):
+    return a * b
+
+
+
+def division(a,b):
+    a / b
+    
+    
+    
+print("please enter the operand")
+
+
+
+while True:
+    
+
+        
+    operand = input("pls enter your choice from + , - , * , / : ")
+    
+    if operand in ('+','-','*','/'):
+        
+        
+        num1 = float(input("please  enter your 1st number : "))
+        num2 = float(input("please  enter your 2nd number : " ))
+        
+        if operand == '+':
+            print(num1, '+' , num2 , '=' , addition(num1,num2))
+            
+        elif operand == '-':
+            print(num1, '-', num2, '=', subtraction(num1,num2))
+            
+        elif operand == '*':
+            print(num1, '*', num2, '=', multiplication(num1,num2))
+            
+        elif operand == '/':
+            print(num1, '/', num2, '=', division(num1,num2))
+            
+        another = input("DO you wanna do another calculation.If not enter  'N'. If you want to continue enter anything  : ")
+        if another.lower() == 'n':
+            
+            
+            break
+            
+    else:
+        print('Pls enter valid input')
+        
+            
+    
+        
+    
