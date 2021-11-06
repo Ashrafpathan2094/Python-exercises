@@ -14,8 +14,11 @@ def multiplication(a,b):
 
 
 def division(a,b):
-    a / b
+    return a / b
     
+
+def mod(a,b):
+    return a%b
     
     
 print("please enter the operand")
@@ -26,13 +29,24 @@ while True:
     
 
         
-    operand = input("pls enter your choice from + , - , * , / : ")
+    operand = input("pls enter your choice from + , - , * , /, % : ")
     
-    if operand in ('+','-','*','/'):
+    if operand in ('+','-','*','/','%'):
         
-        
-        num1 = float(input("please  enter your 1st number : "))
-        num2 = float(input("please  enter your 2nd number : " ))
+        while True:
+            try:
+                num1 = float(input("please  enter your 1st number : "))
+                break
+            except:
+                print("please enter an number")
+                
+                
+        while True:
+            try:
+                num2 = float(input("please  enter your 2nd number : "))
+                break
+            except:
+                print("please enter an number")
         
         if operand == '+':
             print(num1, '+' , num2 , '=' , addition(num1,num2))
@@ -45,6 +59,9 @@ while True:
             
         elif operand == '/':
             print(num1, '/', num2, '=', division(num1,num2))
+            
+        elif operand == '%':
+            print(num1,'%',num2 , '=', mod(num1,num2))
             
         another = input("DO you wanna do another calculation.If not enter  'N'. If you want to continue enter anything  : ")
         if another.lower() == 'n':
